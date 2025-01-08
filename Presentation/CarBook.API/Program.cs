@@ -1,4 +1,5 @@
 using CarBook.Application.Features.CQRS.Handlers.AboutHandlers;
+using CarBook.Application.Features.CQRS.Handlers.BannerHandlers;
 using CarBook.Application.Interfaces;
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
@@ -19,12 +20,22 @@ builder.Services.AddDbContext<CarBookContext>(options =>
 });
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IBannerRepository), typeof(BannerRepository));
 
 builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
 builder.Services.AddScoped<CreateAboutCommandHandler>();
 builder.Services.AddScoped<UpdateAboutCommandHandler>();
 builder.Services.AddScoped<RemoveAboutCommandHandler>();
+
+builder.Services.AddScoped<GetBannerQueryHandler>();
+builder.Services.AddScoped<GetBannerByIdQueryHandler>();
+builder.Services.AddScoped<CreateBannerCommandHandler>();
+builder.Services.AddScoped<UpdateBannerCommandHandler>();
+builder.Services.AddScoped<RemoveBannerCommandHandler>();
+builder.Services.AddScoped<ChangeBannerStatusCommandHandler>();
+builder.Services.AddScoped<UpdateBannerShownAsFalseCommandHandler>();
+builder.Services.AddScoped<UpdateBannerShownAsTrueCommandHandler>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

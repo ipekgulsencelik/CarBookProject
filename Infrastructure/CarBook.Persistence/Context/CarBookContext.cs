@@ -10,5 +10,6 @@ namespace CarBook.Persistence.Context
         }
 
         public DbSet<About> Abouts { get; set; }
+        public DbSet<Banner> Banners { get; set; }
     }
 }
