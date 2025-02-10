@@ -4,9 +4,9 @@
     {
         public int BrandID { get; set; }
 
-        public ChangeBrandStatusCommand(int bannerID)
+        public ChangeBrandStatusCommand(int brandID)
         {
-            BrandID = bannerID;
+            BrandID = brandID;
         }
     }
 }
