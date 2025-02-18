@@ -9,6 +9,7 @@ using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using CarBook.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -77,6 +78,8 @@ builder.Services.AddScoped<CreateMessageCommandHandler>();
 builder.Services.AddScoped<UpdateMessageCommandHandler>();
 builder.Services.AddScoped<RemoveMessageCommandHandler>();
 builder.Services.AddScoped<ChangeMessageStatusCommandHandler>();
+
+builder.Services.AddApplicationService(builder.Configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

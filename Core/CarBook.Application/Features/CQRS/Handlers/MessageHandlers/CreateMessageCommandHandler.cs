@@ -19,8 +19,8 @@ namespace CarBook.Application.Features.CQRS.Handlers.MessageHandlers
         public async Task Handle(CreateMessageCommand command)
         {
             command.IsRead = false;
-            var about = _mapper.Map<Message>(command);
-            await _repository.CreateAsync(about);
+            var message = _mapper.Map<Message>(command);
+            await _repository.CreateAsync(message);
         }
     }
 }

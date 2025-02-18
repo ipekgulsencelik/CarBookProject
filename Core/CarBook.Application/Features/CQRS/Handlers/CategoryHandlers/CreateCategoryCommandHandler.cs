@@ -18,8 +18,8 @@ namespace CarBook.Application.Features.CQRS.Handlers.CategoryHandlers
 
         public async Task Handle(CreateCategoryCommand command)
         {
-            var about = _mapper.Map<Category>(command);
-            await _repository.CreateAsync(about);
+            var category = _mapper.Map<Category>(command);
+            await _repository.CreateAsync(category);
         }
     }
 }
